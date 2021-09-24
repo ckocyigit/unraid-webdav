@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>WebDAV</Name>
+  <Repository>ck98/webdav-nginx</Repository>
+  <Registry>https://hub.docker.com/r/ck98/webdav-nginx</Registry>
+  <Network>Bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/114062-support-webdav-nginx/</Support>
+  <Project>https://sabre.io/</Project>
+  <Overview>Very simple WebDAV server based on SabreDav and NGINX as the webserver. &#xD;
+This should work with Windows Explorer as the client.&#xD;
+&#xD;
+</Overview>
+  <Category>Cloud:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/mgutt/unraid-docker-templates/main/mgutt/Apache-WebDAV.xml</TemplateURL>
+  <Icon>https://camo.githubusercontent.com/ea0e36ac93ea7197dc50aa83adbd3269f7434e6f9a2aed50594cb5c7dc7aaaf3/687474703a2f2f73616272652e696f2f696d672f6c6f676f2e706e67</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1632490171</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Very simple WebDAV server based on SabreDav and NGINX as the webserver. &#xD;
+This should work with Windows Explorer as the client.&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>Bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/location/of/files/</HostDir>
+      <ContainerDir>/var/webdav/public</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>USERNAME</Value>
+      <Name>WEBDAV_USERNAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>PASSWORD</Value>
+      <Name>WEBDAV_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0000</Value>
+      <Name>PUMASK</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="WEBDAV_USERNAME" Target="WEBDAV_USERNAME" Default="" Mode="" Description="Container Variable: WEBDAV_USERNAME" Type="Variable" Display="always" Required="false" Mask="false">USERNAME</Config>
+  <Config Name="WEBDAV_PASSWORD" Target="WEBDAV_PASSWORD" Default="" Mode="" Description="Container Variable: WEBDAV_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">PASSWORD</Config>
+  <Config Name="FILES_LOCATION" Target="/var/webdav/public" Default="" Mode="rw" Description="Container Path: /var/webdav/public" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/location/of/files/</Config>
+  <Config Name="HTTP_PORT" Target="80" Default="8234" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+  <Config Name="User ID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="Group ID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="umask" Target="PUMASK" Default="0000" Mode="" Description="Container Variable: PUMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">0000</Config>
+</Container>
