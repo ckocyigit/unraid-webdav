@@ -67,7 +67,7 @@ This should work with Windows Explorer as the client.&#xD;
     </Variable>
     <Variable>
       <Value>0000</Value>
-      <Name>PUMASK</Name>
+      <Name>UMASK</Name>
       <Mode/>
     </Variable>
   </Environment>
@@ -77,5 +77,5 @@ This should work with Windows Explorer as the client.&#xD;
   <Config Name="HTTP_PORT" Target="80" Default="8234" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="User ID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
-  <Config Name="umask" Target="PUMASK" Default="0000" Mode="" Description="Container Variable: PUMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">0000</Config>
+  <Config Name="umask" Target="UMASK" Default="0000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="advanced-hide" Required="false" Mask="false">0000</Config>
 </Container>
